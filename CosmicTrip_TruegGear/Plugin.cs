@@ -101,36 +101,6 @@ public class Plugin : BasePlugin
         }
     }
 
-    //[HarmonyPostfix, HarmonyPatch(typeof(PlayerInputVR), "ForceDropObject")]
-    //private static void PlayerInputVR_ForceDropObject_Postfix(PlayerInputVR __instance)
-    //{
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("ForceDropObject");
-    //    if (__instance.Handedness == InputHandedness.HAND_LEFT)
-    //    {
-    //        Log.LogInfo("LeftHandForceDropObject");
-    //    }
-    //    else if (__instance.Handedness == InputHandedness.HAND_RIGHT)
-    //    {
-    //        Log.LogInfo("RightHandForceDropObject");
-    //    }
-    //}
-
-    //[HarmonyPostfix, HarmonyPatch(typeof(PlayerInputVR), "ForcePullObject")]
-    //private static void PlayerInputVR_ForcePullObject_Postfix(PlayerInputVR __instance)
-    //{
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("ForcePullObject");
-    //    if (__instance.Handedness == InputHandedness.HAND_LEFT)
-    //    {
-    //        Log.LogInfo("LeftHandForcePullObject");
-    //    }
-    //    else if (__instance.Handedness == InputHandedness.HAND_RIGHT)
-    //    {
-    //        Log.LogInfo("RightHandForcePullObject");
-    //    }
-    //}
-
     [HarmonyPostfix, HarmonyPatch(typeof(PlayerInputGun), "Shoot")]
     private static void PlayerInputGun_Shoot_Postfix(PlayerInputGun __instance)
     {
@@ -165,15 +135,6 @@ public class Plugin : BasePlugin
             _TrueGear.Play("RightHandGunChargeShoot");
         }
     }
-
-    //[HarmonyPostfix, HarmonyPatch(typeof(PlayerInput), "OnMenuSetting")]
-    //private static void PlayerInput_OnMenuSetting_Postfix(PlayerInput __instance)
-    //{
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("OnMenuSetting");
-    //}
-
-
 
     [HarmonyPostfix, HarmonyPatch(typeof(ToolFrisbee2), "ChargeLevelOne")]
     private static void ToolFrisbee2_ChargeLevelOne_Postfix(ToolFrisbee2 __instance, PlayerInput input)
@@ -284,135 +245,6 @@ public class Plugin : BasePlugin
         Log.LogInfo(input.name);
     }
 
-
-
-    //[HarmonyPostfix, HarmonyPatch(typeof(ToolShield), "MountTriggerStart")]
-    //private static void ToolShield_MountTriggerStart_Postfix(ToolShield __instance, PlayerInput input)
-    //{
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("MountTriggerStart");
-    //    if (input.name.Contains("device_1"))
-    //    {
-    //        Log.LogInfo("StartLeftHandShield");
-    //    }
-    //    else if (input.name.Contains("device_2"))
-    //    {
-    //        Log.LogInfo("StartRightHandShield");
-    //    }
-    //    Log.LogInfo(input.name);
-    //}
-
-    //[HarmonyPostfix, HarmonyPatch(typeof(ToolShield), "MountTriggerEnd")]
-    //private static void ToolShield_MountTriggerEnd_Postfix(ToolShield __instance, PlayerInput input)
-    //{
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("MountTriggerEnd");
-    //    if (input.name.Contains("device_1"))
-    //    {
-    //        Log.LogInfo("StopLeftHandShield");
-    //    }
-    //    else if (input.name.Contains("device_2"))
-    //    {
-    //        Log.LogInfo("StopRightHandShield");
-    //    }
-    //    Log.LogInfo(input.name);
-    //}
-
-    //[HarmonyPostfix, HarmonyPatch(typeof(ToolShield), "OnCollisionEnter")]
-    //private static void ToolShield_OnCollisionEnter_Postfix(ToolShield __instance)
-    //{
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("ShieldOnCollisionEnter");
-    //    Log.LogInfo(__instance.gameObject.transform.parent.transform.parent.name);
-    //}
-
-    //[HarmonyPostfix, HarmonyPatch(typeof(ToolShield), "AbsorbBullet")]
-    //private static void ToolShield_AbsorbBullet_Postfix(ToolShield __instance)
-    //{
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("ShieldAbsorbBullet");
-    //    Log.LogInfo(__instance.gameObject.transform.parent.transform.parent.name);
-    //}
-
-    //[HarmonyPostfix, HarmonyPatch(typeof(ToolShield), "ReflectBullet")]
-    //private static void ToolShield_ReflectBullet_Postfix(ToolShield __instance)
-    //{
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("ShieldReflectBullet");
-    //    Log.LogInfo(__instance.gameObject.transform.parent.transform.parent.name);
-    //}
-
-    //[HarmonyPostfix, HarmonyPatch(typeof(ToolShield), "ShootBullet")]
-    //private static void ToolShield_ShootBullet_Postfix(ToolShield __instance)
-    //{
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("ShieldShootBullet");
-    //    Log.LogInfo(__instance.gameObject.transform.parent.transform.parent.name);
-    //}
-
-
-
-    //[HarmonyPostfix, HarmonyPatch(typeof(ToolBubbleGunFluid), "FluidLevel",MethodType.Setter)]
-    //private static void ToolBubbleGunFluid_FluidLevel_Postfix(ToolBubbleGunFluid __instance )
-    //{
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("FluidLevel");
-    //    Log.LogInfo(__instance.FluidLevel);
-    //    Log.LogInfo(__instance.gameObject.transform.parent.transform.parent.name);
-    //}
-
-    //[HarmonyPostfix, HarmonyPatch(typeof(ToolBubbleGun), "DoHapticError")]
-    //private static void ToolBubbleGun_DoHapticError_Postfix(ToolBubbleGun __instance, PlayerInput input)
-    //{
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("DoHapticError");
-    //    Log.LogInfo(input.name);
-    //    Log.LogInfo(__instance.gameObject.transform.parent.transform.parent.name);
-    //}
-
-    //[HarmonyPostfix, HarmonyPatch(typeof(ToolBubbleGun), "DoShootingSequence")]
-    //private static void ToolBubbleGun_DoShootingSequence_Postfix(ToolBubbleGun __instance, PlayerInput input)
-    //{
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("DoShootingSequence");
-    //    Log.LogInfo(input.name);
-    //    Log.LogInfo(__instance.gameObject.transform.parent.transform.parent.name);
-    //}
-
-    //[HarmonyPostfix, HarmonyPatch(typeof(ToolBubbleGun), "DoAftertouch")]
-    //private static void ToolBubbleGun_DoAftertouch_Postfix(ToolBubbleGun __instance, PlayerInput input)
-    //{
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("DoAftertouch");
-    //    Log.LogInfo(input.name);
-    //    Log.LogInfo(__instance.gameObject.transform.parent.transform.parent.name);
-    //}
-
-    //[HarmonyPostfix, HarmonyPatch(typeof(ToolBubbleGun), "DoOpenVisuals")]
-    //private static void ToolBubbleGun_DoOpenVisuals_Postfix(ToolBubbleGun __instance, PlayerInput input)
-    //{
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("DoOpenVisuals");
-    //    Log.LogInfo(input.name);
-    //    Log.LogInfo(__instance.gameObject.transform.parent.transform.parent.name);
-    //}
-
-    //[HarmonyPostfix, HarmonyPatch(typeof(ToolBubbleGun), "OnMountTriggerStart")]
-    //private static void ToolBubbleGun_OnMountTriggerStart_Postfix(ToolBubbleGun __instance)
-    //{
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("OnMountTriggerStart");
-    //    Log.LogInfo(__instance.gameObject.transform.parent.transform.parent.name);
-    //}
-
-    //[HarmonyPostfix, HarmonyPatch(typeof(ToolBubbleGunFluid), "HandleFluidVisualization")]
-    //private static void ToolBubbleGunFluid_HandleFluidVisualization_Postfix(ToolBubbleGunFluid __instance)
-    //{
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("HandleFluidVisualization");
-    //    Log.LogInfo(__instance.Owner.gameObject.transform.parent.transform.parent.name);
-    //}
-
     [HarmonyPostfix, HarmonyPatch(typeof(PlayerCore), "OnDamage")]
     private static void PlayerCore_OnDamage_Postfix(PlayerCore __instance, DamageData data)
     {
@@ -452,27 +284,6 @@ public class Plugin : BasePlugin
         Log.LogInfo("Healing");
         _TrueGear.Play("Healing");
     }
-
-    //[HarmonyPostfix, HarmonyPatch(typeof(ToolShield2), "DoOpenShield")]
-    //private static void ToolShield2_DoOpenShield_Postfix(ToolShield2 __instance)
-    //{
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("DoOpenShield");
-    //}
-
-    //[HarmonyPostfix, HarmonyPatch(typeof(ToolShield2), "OnShieldShattered")]
-    //private static void ToolShield2_OnShieldShattered_Postfix(ToolShield2 __instance)
-    //{
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("OnShieldShattered");
-    //}
-
-    //[HarmonyPostfix, HarmonyPatch(typeof(ToolShield2), "OnHideShield")]
-    //private static void ToolShield2_OnHideShield_Postfix(ToolShield2 __instance)
-    //{
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("OnHideShield");
-    //}
 
     [HarmonyPostfix, HarmonyPatch(typeof(ToolShield2), "MountTriggerStart")]
     private static void ToolShield2_MountTriggerStart_Postfix(ToolShield2 __instance, PlayerInput input)
@@ -563,45 +374,6 @@ public class Plugin : BasePlugin
         }
     }
 
-    //[HarmonyPostfix, HarmonyPatch(typeof(PlayerInputVR), "DoHapticPulsateLong")]
-    //private static void PlayerInputVR_DoHapticPulsateLong_Postfix(PlayerInputVR __instance, float value)
-    //{
-    //    if (value == 0f)
-    //    {
-    //        return;
-    //    }
-    //    Log.LogInfo("---------------------------------------------");
-    //    if (__instance.Handedness == InputHandedness.HAND_LEFT)
-    //    {
-    //        Log.LogInfo("LeftHandHapticPulsateLong");
-    //    }
-    //    else
-    //    {
-    //        Log.LogInfo("RightHandHapticPulsateLong");
-    //    }
-    //    Log.LogInfo(value);
-    //}
-
-    //[HarmonyPostfix, HarmonyPatch(typeof(PlayerInputVR), "DoHapticPulsateShort")]
-    //private static void PlayerInputVR_DoHapticPulsateShort_Postfix(PlayerInputVR __instance, float value)
-    //{
-    //    if(value < 0.1f)
-    //    {
-    //        return;
-    //    }
-    //    Log.LogInfo("---------------------------------------------");
-    //    if (__instance.Handedness == InputHandedness.HAND_LEFT)
-    //    {
-    //        Log.LogInfo("LeftHandHapticPulsateShort");
-    //    }
-    //    else
-    //    {
-    //        Log.LogInfo("RightHandHapticPulsateShort");
-    //    }
-    //    Log.LogInfo(value);
-    //}
-
-
     [HarmonyPostfix, HarmonyPatch(typeof(PlayerInputVR), "StartInhaleEffects")]
     private static void PlayerInputVR_StartInhaleEffects_Postfix(PlayerInputVR __instance )
     {
@@ -655,21 +427,7 @@ public class Plugin : BasePlugin
         //Log.LogInfo("---------------------------------------------");
         //Log.LogInfo("SetGunModeOff");
     }
-
-    //[HarmonyPostfix, HarmonyPatch(typeof(PlayerInputVR), "OnPointEnd")]
-    //private static void PlayerInputVR_OnPointEnd_Postfix(PlayerInputVR __instance)
-    //{
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("OnPointEnd");
-    //}
-
-    //[HarmonyPostfix, HarmonyPatch(typeof(PlayerInputVR), "OnPointStart")]
-    //private static void PlayerInputVR_OnPointStart_Postfix(PlayerInputVR __instance)
-    //{
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("OnPointStart");
-    //}
-
+    
     [HarmonyPostfix, HarmonyPatch(typeof(PlayerInputVR), "OnPointTriggerStart")]
     private static void PlayerInputVR_OnPointTriggerStart_Postfix(PlayerInputVR __instance)
     {
@@ -692,20 +450,6 @@ public class Plugin : BasePlugin
         //Log.LogInfo("---------------------------------------------");
         //Log.LogInfo("OnPointTriggerEnd");
     }
-
-    //[HarmonyPostfix, HarmonyPatch(typeof(PlayerInputVR), "OnMountStart")]
-    //private static void PlayerInputVR_OnMountStart_Postfix(PlayerInputVR __instance)
-    //{
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("OnMountStart");
-    //}
-
-    //[HarmonyPostfix, HarmonyPatch(typeof(PlayerInputVR), "OnMountEnd")]
-    //private static void PlayerInputVR_OnMountEnd_Postfix(PlayerInputVR __instance)
-    //{
-    //    Log.LogInfo("---------------------------------------------");
-    //    Log.LogInfo("OnMountEnd");
-    //}
 
     [HarmonyPostfix, HarmonyPatch(typeof(PlayerInputVR), "TouchTransitionWaitingStates")]
     private static void PlayerInputVR_TouchTransitionWaitingStates_Postfix(PlayerInputVR __instance)
